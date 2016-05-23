@@ -1,0 +1,33 @@
+{
+  "bitwise": true,
+  "laxcomma": true,
+  "camelcase": true,
+  "curly": true,
+  "eqeqeq": true,
+  "forin": false,
+  "immed": true,
+  "latedef": false,
+  "newcap": true,
+  "noarg": true,
+  "nonew": false,
+  "quotmark": "single",
+  "undef": false,
+  "unused": true,
+  "devel": true,
+  "trailing": true,
+  "browser": true,
+  "sub": true,
+  "debug": true,
+  "globals": {
+    "process": true,
+    "Phaser": false,
+    "Interpreter": true,
+    "NativeHelper": true,
+    "require": true,
+    "module": true,
+    "exports": true,
+    "goog": true,
+    "Blockly": true,
+    "$": true
+  }
+}
