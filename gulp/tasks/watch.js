@@ -14,6 +14,6 @@ module.exports = function() {
         path.join(config.src.base, config.src.js),
         path.join(config.src.base, config.src.css),
         path.join(config.src.base, config.src.html)
-    ], ['build']);
+    ], ['build', 'reload']);
 
 };

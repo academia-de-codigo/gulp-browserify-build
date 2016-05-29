@@ -2,7 +2,6 @@
  * Live reload
  */
 var livereload = require('gulp-livereload');
-livereload.listen();
 
 /**
  * Live reload

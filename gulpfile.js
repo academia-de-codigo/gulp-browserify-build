@@ -20,7 +20,7 @@ for (var task in tasks) {
 
 // Setup the build task running sequence
 gulp.task('build', ['lint'], function() {
-    runSequence('assets', 'css', 'compile', 'html', 'reload');
+    runSequence('assets', 'css', 'compile', 'html');
 });
 
 // Setup the default task running sequence
