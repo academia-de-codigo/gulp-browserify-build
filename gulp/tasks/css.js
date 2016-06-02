@@ -13,7 +13,7 @@ var config = require('../config');
  */
 module.exports = function() {
 
-    gulp.src(path.join(config.src.base, config.src.css))
+    return gulp.src(path.join(config.src.base, config.src.css))
         .pipe(concat(path.join(config.bundle.css)))
         .pipe(gulpif(config.prod, minifycss({
             discardComments: {

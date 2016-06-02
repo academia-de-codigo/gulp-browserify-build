@@ -7,6 +7,7 @@
  * To add a new task, simply add a new task file into that directory.
  */
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 var requireDir = require('require-dir');
 var runSequence = require('run-sequence');
 
@@ -22,6 +23,7 @@ for (var task in tasks) {
 gulp.task('build', ['lint'], function(cb) {
     runSequence('assets', 'css', 'compile', 'html', function() {
         cb();
+        gutil.log(gutil.colors.green('Application Build finished!'));
     });
 });
 

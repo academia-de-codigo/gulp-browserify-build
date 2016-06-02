@@ -11,7 +11,7 @@ var config = require('../config');
  */
 module.exports = function() {
 
-    gulp.src(findAssets.load({
+    return gulp.src(findAssets.load({
         debug: config.debug
     })).pipe(gulp.dest(path.join(config.dist.base, config.dist.assets)));
 
