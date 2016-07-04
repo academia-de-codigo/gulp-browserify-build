@@ -3,7 +3,7 @@
   "description": "A project template based on gulp and browserify",
   "private": true,
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "src/js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -33,5 +33,8 @@
     "vinyl-paths": "^2.1.0",
     "vinyl-source-stream": "^1.1.0",
     "yargs": "^4.7.1"
+  },
+  "dependencies": {
+    "gulp-connect": "^4.1.0"
   }
 }

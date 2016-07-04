@@ -16,6 +16,7 @@
   "devel": true,
   "trailing": true,
   "browser": true,
+  "node": true,
   "sub": true,
   "debug": true,
   "globals": {

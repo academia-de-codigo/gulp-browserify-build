@@ -10,7 +10,8 @@ config.src = {
     base: 'src',
     css: 'css/**/*.css',
     js: 'js/**/*.js',
-    html: 'index.html'
+    html: 'index.html',
+    deps: 'node_modules/**/*.js'
 };
 
 config.dist = {

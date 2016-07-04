@@ -8,15 +8,20 @@ var streamify = require('gulp-streamify');
 var path = require('path');
 var source = require('vinyl-source-stream');
 var browserify = require('browserify');
+var webserver = require('gulp-connect');
 
 var config = require('../config');
 var packageJson = require('../../package.json');
-var dependencies = Object.keys(packageJson && packageJson.dependencies || {});
+//var dependencies = Object.keys(packageJson && packageJson.dependencies || {});
 
 /**
  * Compile angular templates, create browserify bundle and uglify
  */
 module.exports = function() {
+
+    if (config.debug) {
+        process.env.BROWSERIFYSHIM_DIAGNOSTICS = 1;
+    }
 
     var bundler = browserify({
         cache: {},
@@ -28,13 +33,14 @@ module.exports = function() {
 
     var bundlee = function() {
         return bundler
-            .external(dependencies)
+            //.external(dependencies)
             .bundle()
             .pipe(source(config.bundle.js))
             .pipe(gulpif(config.prod, streamify(uglify({
                 outSourceMaps: false
             }))))
-            .pipe(gulp.dest(path.join(config.dist.base,config.dist.js)));
+            .pipe(gulp.dest(path.join(config.dist.base, config.dist.js)))
+            .pipe(webserver.reload());
     };
 
     return bundlee();

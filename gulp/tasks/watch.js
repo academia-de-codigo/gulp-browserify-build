@@ -10,10 +10,18 @@ var config = require('../config');
  */
 module.exports = function() {
 
-    return gulp.watch([
+    gulp.watch(path.join(config.src.base, config.src.css), {
+        interval: 500
+    }, ['css']);
+    gulp.watch(path.join(config.src.base, config.src.html), {
+        interval: 500
+    }, ['html']);
+
+    gulp.watch([
         path.join(config.src.base, config.src.js),
-        path.join(config.src.base, config.src.css),
-        path.join(config.src.base, config.src.html)
-    ], ['build', 'reload']);
+        config.src.deps
+    ], {
+        interval: 1000
+    }, ['lint', 'compile']);
 
 };

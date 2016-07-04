@@ -22,12 +22,14 @@ for (var task in tasks) {
 // Setup the build task running sequence
 gulp.task('build', ['lint'], function(cb) {
     runSequence('assets', 'css', 'compile', 'html', function() {
-        cb();
         gutil.log(gutil.colors.green('Application Build finished!'));
+        cb();
     });
 });
 
+gulp.task('livereload', ['watch', 'serve']);
+
 // Setup the default task running sequence
 gulp.task('default', ['build'], function() {
-    runSequence('serve', 'watch');
+    gulp.start('livereload');
 });

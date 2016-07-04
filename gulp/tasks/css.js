@@ -7,6 +7,7 @@ var minifycss = require('gulp-cssnano');
 var concat = require('gulp-concat');
 var path = require('path');
 var config = require('../config');
+var webserver = require('gulp-connect');
 
 /**
  * Minify and copy css files
@@ -21,6 +22,6 @@ module.exports = function() {
             },
             zindex: false
         })))
-        .pipe(gulp.dest(path.join(config.dist.base, config.dist.css)));
-
+        .pipe(gulp.dest(path.join(config.dist.base, config.dist.css)))
+        .pipe(webserver.reload());
 };
