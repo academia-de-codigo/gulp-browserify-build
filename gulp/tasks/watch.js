@@ -17,8 +17,13 @@ module.exports = function() {
         interval: 500
     }, ['html']);
 
+    gulp.watch(config.src.assets, {
+        interval: 500
+    }, ['assets']);
+
     gulp.watch([
         path.join(config.src.base, config.src.js),
+        config.src.assets,
         config.src.deps
     ], {
         interval: 1000
