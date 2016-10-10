@@ -18,7 +18,8 @@ config.dist = {
     base: 'build',
     assets: 'assets',
     js: 'js',
-    css: 'css'
+    css: 'css',
+    target: 'target'
 };
 
 config.bundle = {
